@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Networking/Scenes/MainScreen.unity
+    guid: 15f81b9311bd14641a84880feef31a75
+  - enabled: 0
     path: Assets/Oculus/Interaction/Samples/Scenes/Features/HandGrab.unity
     guid: 1ca1035b12c67f24d81e7bc5ad627d76
   m_configObjects:
