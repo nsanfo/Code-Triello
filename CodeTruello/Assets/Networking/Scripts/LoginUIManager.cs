@@ -9,7 +9,7 @@ public class LoginUIManager : MonoBehaviour
 
     #region UNITY METHODS
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         ConnectOptionsPanelGameobject.SetActive(true);
         ConnectWithNamePanelGameobject.SetActive(false);

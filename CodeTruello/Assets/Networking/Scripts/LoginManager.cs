@@ -45,7 +45,7 @@ public class LoginManager : MonoBehaviourPunCallbacks // access photon call back
     public override void OnConnectedToMaster() {
         Debug.Log("Connected to Master Server" + PhotonNetwork.NickName);
         //load a level
-        PhotonNetwork.LoadLevel("Lobby");
+        PhotonNetwork.LoadLevel(2); // 2 = lobby scene
     }
 
     #endregion
