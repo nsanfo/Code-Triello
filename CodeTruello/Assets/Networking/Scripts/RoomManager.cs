@@ -37,6 +37,11 @@ public class RoomManager : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
     }
 
+    public void OnEnterButtonClicked_OldWest() {
+        mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_OLDWEST;
+        ExitGames.Client.Photon.Hashtable expectedCustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { {MultiplayerVRConstants.MAP_TYPE_KEY, mapType} };
+        PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
+    }
     #endregion
 
     #region Photon Callback Methods
@@ -66,7 +71,11 @@ public class RoomManager : MonoBehaviourPunCallbacks
                 } else if ((string)mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_OUTDOOR) {
                     // load the outdoor scene
                     PhotonNetwork.LoadLevel("World_Outdoor");
+                } else if ((string)mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_OLDWEST) {
+                    // load the Western scene
+                    PhotonNetwork.LoadLevel("WesternOldTown");
                 }
+                
             }
         }
     }
