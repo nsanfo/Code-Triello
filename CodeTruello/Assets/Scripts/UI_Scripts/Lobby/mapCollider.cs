@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class mapCollider : MonoBehaviour
 {
-    public string colliderName = gameObject.name;
+    public string colliderName;
     public string functionName;
 
     // XR Interaction has the tag "Player"
@@ -12,6 +12,7 @@ public class mapCollider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            //colliderName = gameObject.name;
             Debug.Log("User has entered the " + colliderName);
             Debug.Log("The " + functionName + " function will be called once implemented.");
         }
