@@ -25,20 +25,21 @@ public class RoomManager : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRandomRoom();
     }
 
-    public void OnEnterButtonClicked_Outdoor() {
-        mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_OUTDOOR;
-        ExitGames.Client.Photon.Hashtable expectedCustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { {MultiplayerVRConstants.MAP_TYPE_KEY, mapType} };
-        PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
-    }
-
-    public void OnEnterButtonClicked_School() {
-        mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_SCHOOL;
-        ExitGames.Client.Photon.Hashtable expectedCustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { {MultiplayerVRConstants.MAP_TYPE_KEY, mapType} };
-        PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
-    }
-
+    //Add our maps
     public void OnEnterButtonClicked_OldWest() {
         mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_OLDWEST;
+        ExitGames.Client.Photon.Hashtable expectedCustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { {MultiplayerVRConstants.MAP_TYPE_KEY, mapType} };
+        PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
+    }
+    
+    public void OnEnterButtonClicked_Wizard() {
+        mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_WIZARD;
+        ExitGames.Client.Photon.Hashtable expectedCustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { {MultiplayerVRConstants.MAP_TYPE_KEY, mapType} };
+        PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
+    }
+    
+    public void OnEnterButtonClicked_Castle() {
+        mapType = MultiplayerVRConstants.MAP_TYPE_VALUE_CASTLE;
         ExitGames.Client.Photon.Hashtable expectedCustomRoomProperties = new ExitGames.Client.Photon.Hashtable() { {MultiplayerVRConstants.MAP_TYPE_KEY, mapType} };
         PhotonNetwork.JoinRandomRoom(expectedCustomRoomProperties, 0);
     }
@@ -65,17 +66,20 @@ public class RoomManager : MonoBehaviourPunCallbacks
             object mapType;
             if(PhotonNetwork.CurrentRoom.CustomProperties.TryGetValue(MultiplayerVRConstants.MAP_TYPE_KEY, out mapType)) {
                 Debug.Log("Joined room with the map: " + (string)mapType);
-                if((string)mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_SCHOOL) {
-                    // load school scene
-                    PhotonNetwork.LoadLevel("World_School");
-                } else if ((string)mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_OUTDOOR) {
-                    // load the outdoor scene
-                    PhotonNetwork.LoadLevel("World_Outdoor");
-                } else if ((string)mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_OLDWEST) {
+                if ((string)mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_OLDWEST) {
                     // load the Western scene
                     PhotonNetwork.LoadLevel("WesternOldTown");
+                } else if ((string)mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_WIZARD) {
+                    // load the Wizard scene
+                    // Scene for map has to be added to the build settings
+                    Debug.Log("Once map is added, will join " + (string)mapType);
+                    //PhotonNetwork.LoadLevel("Wizard");
+                } else if ((string)mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_CASTLE) {
+                    // load the Castle scene
+                    // Scene for map has to be added to the build settings
+                    Debug.Log("Once map is added, will join " + (string)mapType);
+                    //PhotonNetwork.LoadLevel("Castle");
                 }
-                
             }
         }
     }
