@@ -14,6 +14,15 @@ public class RoomManagerEditorScript : Editor
         if(GUILayout.Button("Join Random Room")) {
             roomManager.JoinRandomRoom();
         }
-        
+
+        if(GUILayout.Button("Join Old West Map Random Room")) {
+            roomManager.OnEnterButtonClicked_OldWest();
+        }
+        if(GUILayout.Button("Join Wizard Map Random Room")) {
+            roomManager.OnEnterButtonClicked_Wizard();
+        }
+        if(GUILayout.Button("Join Castle Map Random Room")) {
+            roomManager.OnEnterButtonClicked_Castle();
+        }
     }
 }

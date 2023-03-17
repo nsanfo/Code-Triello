@@ -3,14 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using TMPro;
 
 public class RoomManager : MonoBehaviourPunCallbacks
 {
     private string mapType;
+
+    public TextMeshProUGUI OccupancyRateText_ForOldWest;
+    public TextMeshProUGUI OccupancyRateText_ForWizard;
+    public TextMeshProUGUI OccupancyRateText_ForCastle;
+
     // Start is called before the first frame update
     void Start()
     {
         PhotonNetwork.AutomaticallySyncScene = true;
+
+        if (PhotonNetwork.IsConnectedAndReady){
+            PhotonNetwork.JoinLobby();
+        }
     }
 
     // Update is called once per frame
@@ -87,13 +97,43 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public override void OnPlayerEnteredRoom(Player newPlayer) {
         Debug.Log("Player count: " + PhotonNetwork.CurrentRoom.PlayerCount);
     }
+
+    public override void OnRoomListUpdate(List<RoomInfo> roomList){
+        if (roomList.Count == 0){
+            //There is no room at all
+            OccupancyRateText_ForOldWest.text = "Players: " + 0 + " / " + 2;
+            OccupancyRateText_ForWizard.text = "Players: " + 0 + " / " + 2;
+            OccupancyRateText_ForCastle.text = "Players: " + 0 + " / " + 2;
+        }
+        foreach(RoomInfo room in roomList){
+            Debug.Log(room.Name);
+            if (room.Name.Contains(MultiplayerVRConstants.MAP_TYPE_VALUE_OLDWEST)){
+                //Update the Old West room occupancy field
+                Debug.Log("Room is an Old West Map. Player count is: " + room.PlayerCount);
+                OccupancyRateText_ForOldWest.text = "Players: " + room.PlayerCount + " / " + 2;
+            }
+            else if (room.Name.Contains(MultiplayerVRConstants.MAP_TYPE_VALUE_WIZARD)){
+                Debug.Log("Room is a Wizard map. Player count is: " + room.PlayerCount);
+                OccupancyRateText_ForWizard.text = "Players: " + room.PlayerCount + " / " + 2;
+            }
+            else if (room.Name.Contains(MultiplayerVRConstants.MAP_TYPE_VALUE_CASTLE)){
+                Debug.Log("Room is a Castle Map. Player count is: " + room.PlayerCount);
+            OccupancyRateText_ForCastle.text = "Players: " + room.PlayerCount + " / " + 2;
+            }
+        }
+    }
+
+    public override void OnJoinedLobby(){
+        Debug.Log("Joined the Lobby.");
+    }
+
     #endregion
 
 
     #region Private Methods
     //try to create a room when there is no room to join
     private void CreateAndJoinRoom() {
-        string randomRoomName = "Room_" + Random.Range(0, 10000);
+        string randomRoomName = "Room_" + mapType + Random.Range(0, 10000);
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = 20;
 

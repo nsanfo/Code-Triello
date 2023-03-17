@@ -831,7 +831,7 @@ GameObject:
   - component: {fileID: 481977164}
   - component: {fileID: 481977163}
   m_Layer: 0
-  m_Name: playerCountTxt
+  m_Name: playerCountOldWestTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -877,7 +877,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Players: 0/20'
+  m_text: 'Players: 0/2'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -2205,7 +2205,7 @@ GameObject:
   - component: {fileID: 1023499545}
   - component: {fileID: 1023499544}
   m_Layer: 0
-  m_Name: playerCountTxt
+  m_Name: playerCountWizardTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2251,7 +2251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Players: 0/20'
+  m_text: 'Players: 0/2'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -2830,6 +2830,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ced81f98586d26a4a8cf771e2eb50122, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OccupancyRateText_ForOldWest: {fileID: 481977163}
+  OccupancyRateText_ForWizard: {fileID: 1023499544}
+  OccupancyRateText_ForCastle: {fileID: 1798234542}
 --- !u!1 &1382297783
 GameObject:
   m_ObjectHideFlags: 0
@@ -4836,7 +4839,7 @@ GameObject:
   - component: {fileID: 1798234543}
   - component: {fileID: 1798234542}
   m_Layer: 0
-  m_Name: playerCountTxt
+  m_Name: playerCountCastleTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4882,7 +4885,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Players: 0/20'
+  m_text: 'Players: 0/2'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
