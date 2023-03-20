@@ -118,7 +118,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
             }
             else if (room.Name.Contains(MultiplayerVRConstants.MAP_TYPE_VALUE_CASTLE)){
                 Debug.Log("Room is a Castle Map. Player count is: " + room.PlayerCount);
-            OccupancyRateText_ForCastle.text = "Players: " + room.PlayerCount + " / " + 2;
+                OccupancyRateText_ForCastle.text = "Players: " + room.PlayerCount + " / " + 2;
             }
         }
     }
