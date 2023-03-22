@@ -10,11 +10,16 @@ public class SpawnManager : MonoBehaviour
     GameObject GenericVRPlayerPrefab;
     
     public Vector3 spawnPosition;
+    public GameObject SpawnCharWeapon;
 
     void Start()
     {
         if(PhotonNetwork.IsConnectedAndReady) {
             PhotonNetwork.Instantiate(GenericVRPlayerPrefab.name, spawnPosition, Quaternion.identity);
+            if(SpawnCharWeapon != null) {
+                PhotonNetwork.Instantiate(SpawnCharWeapon.name, spawnPosition, Quaternion.identity);
+            }
+
         }
     }
 
