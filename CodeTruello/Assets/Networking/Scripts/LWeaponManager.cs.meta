@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: edae422a52a075d4d868785e1afbb7d7
+guid: 9497542aa552d394e9ee075ffcdc9088
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - GenericVRPlayerPrefab: {fileID: 6424737960401965867, guid: 94c3fabfb94040f42ab2bdbac989f7c1, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
