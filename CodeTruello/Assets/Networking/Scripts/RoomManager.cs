@@ -12,7 +12,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public TextMeshProUGUI OccupancyRateText_ForOldWest;
     public TextMeshProUGUI OccupancyRateText_ForWizard;
     public TextMeshProUGUI OccupancyRateText_ForCastle;
-
+    public GameObject LobbyWeaponManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +70,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     //This will be called when a local player joins the room
     public override void OnJoinedRoom() {
         Debug.Log("The Local player " + PhotonNetwork.NickName + " joined to " + PhotonNetwork.CurrentRoom.Name + " Player count: " + PhotonNetwork.CurrentRoom.PlayerCount);
+        LobbyWeaponManager.tag = "PlayerLobby1";
 
 
         if(PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey(MultiplayerVRConstants.MAP_TYPE_KEY)) {
@@ -96,6 +97,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     //This will be called when someone outside of local has joined the room
     public override void OnPlayerEnteredRoom(Player newPlayer) {
         Debug.Log("Player count: " + PhotonNetwork.CurrentRoom.PlayerCount);
+        LobbyWeaponManager.tag = "PlayerLobby2";
     }
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList){
