@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
+
 public class RWeaponManager : MonoBehaviour
 {
     GameObject LobbyWeaponManager;
@@ -30,4 +31,5 @@ public class RWeaponManager : MonoBehaviour
     {
         
     }
+    
 }

@@ -9,15 +9,18 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
     public GameObject LocalXRRigGameObject;
     public GameObject AvatarHeadGameObject;
     public GameObject AvatarBodyGameObject;
+    private GameObject LobbyWeaponManager;
     private PhotonView photonView;
 
     // Start is called before the first frame update
     void Start()
     {
+        LobbyWeaponManager = GameObject.Find("Lobby Weapon Manager");
         photonView = GetComponent<PhotonView>();
         if(photonView.IsMine) {
             // the player is local
             LocalXRRigGameObject.SetActive(true);
+            // this.gameObject.transform.position = new Vector3(0, 0, -123);
             SetLayerRecursively(AvatarHeadGameObject, 6);
             SetLayerRecursively(AvatarBodyGameObject, 7);
 
@@ -31,7 +34,9 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
         } else {
             // the player is remote
             LocalXRRigGameObject.SetActive(false);
-
+            // this.gameObject.transform.position = new Vector3(-11, 0, 16);
+            // Debug.Log("I am a remote player");
+            // this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
             SetLayerRecursively(AvatarHeadGameObject, 0);
             SetLayerRecursively(AvatarBodyGameObject, 0);
         }

@@ -2320,7 +2320,6 @@ MonoBehaviour:
   OccupancyRateText_ForOldWest: {fileID: 481977163}
   OccupancyRateText_ForWizard: {fileID: 1023499544}
   OccupancyRateText_ForCastle: {fileID: 1798234542}
-  LobbyWeaponManager: {fileID: 988205587}
 --- !u!1 &1382297783
 GameObject:
   m_ObjectHideFlags: 0
@@ -4986,7 +4985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2685365126382359510, guid: 7f834b8cfcde9184cb316ca48716de98, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.33696923
+      value: 0.508
       objectReference: {fileID: 0}
     - target: {fileID: 2685365126382359510, guid: 7f834b8cfcde9184cb316ca48716de98, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5110,7 +5109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4006410924163131238, guid: df4288dfdf948094abe9ba84bd2d602d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.60163575
+      value: 1.115
       objectReference: {fileID: 0}
     - target: {fileID: 4006410924163131238, guid: df4288dfdf948094abe9ba84bd2d602d, type: 3}
       propertyPath: m_LocalPosition.z
