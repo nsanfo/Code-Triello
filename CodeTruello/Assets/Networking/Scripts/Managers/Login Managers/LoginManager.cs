@@ -22,7 +22,6 @@ public class LoginManager : MonoBehaviourPunCallbacks // access photon call back
     #region UI CALLBACK METHODS
     public void ConnectAnonymously() {
         // connect player to Photon
-        PhotonNetwork.NickName = "Anonymous Player";
         PhotonNetwork.ConnectUsingSettings();
     }
     public void ConnectToPhotonServer() {
