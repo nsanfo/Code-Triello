@@ -8,8 +8,9 @@ using UnityEngine.SceneManagement;
 public class goToLobby : MonoBehaviour
 {
     public Button StartButton;
+    public GameObject LoginUIScene;
 
-    void lobbyScene() {
+    public void lobbyScene() {
         Debug.Log("Sent to Lobby");
         // Main Menu = Scene 0
         // Sample Scene = Scene 1
