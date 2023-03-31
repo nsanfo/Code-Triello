@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 8bc7221d7c6f9d141a288f1ed8cebf28, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 6c154636a358e41b4bcc5d4158c4c529, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.004910226, g: 0.007266079, b: 0.018584976, a: 1}
+  m_IndirectSpecularColor: {r: 0.20422964, g: 0.036994897, b: 0.11615913, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -704,11 +704,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: b358630b37c50d74dac116edf754717a, type: 3}
     - target: {fileID: 4259889451999880534, guid: 07cc64a7d1c2c6a4b852f5938cde9898, type: 3}
       propertyPath: m_Color.g
-      value: 0.9098039
+      value: 0.8901961
       objectReference: {fileID: 0}
     - target: {fileID: 4259889451999880534, guid: 07cc64a7d1c2c6a4b852f5938cde9898, type: 3}
       propertyPath: m_Color.r
-      value: 0.7607843
+      value: 0.4862745
       objectReference: {fileID: 0}
     - target: {fileID: 4259889451999880535, guid: 07cc64a7d1c2c6a4b852f5938cde9898, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -768,11 +768,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4259889452488477466, guid: 07cc64a7d1c2c6a4b852f5938cde9898, type: 3}
       propertyPath: m_Color.g
-      value: 0.90935194
+      value: 0.8901961
       objectReference: {fileID: 0}
     - target: {fileID: 4259889452488477466, guid: 07cc64a7d1c2c6a4b852f5938cde9898, type: 3}
       propertyPath: m_Color.r
-      value: 0.759434
+      value: 0.4862745
       objectReference: {fileID: 0}
     - target: {fileID: 4259889452604965265, guid: 07cc64a7d1c2c6a4b852f5938cde9898, type: 3}
       propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -928,11 +928,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: b358630b37c50d74dac116edf754717a, type: 3}
     - target: {fileID: 4259889453322337186, guid: 07cc64a7d1c2c6a4b852f5938cde9898, type: 3}
       propertyPath: m_Color.g
-      value: 0.9098039
+      value: 0.8901961
       objectReference: {fileID: 0}
     - target: {fileID: 4259889453322337186, guid: 07cc64a7d1c2c6a4b852f5938cde9898, type: 3}
       propertyPath: m_Color.r
-      value: 0.7607843
+      value: 0.4862745
       objectReference: {fileID: 0}
     - target: {fileID: 4259889453322337187, guid: 07cc64a7d1c2c6a4b852f5938cde9898, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1075,12 +1075,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: b358630b37c50d74dac116edf754717a, type: 3}
     - target: {fileID: 4259889454049895750, guid: 07cc64a7d1c2c6a4b852f5938cde9898, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259889454049895750, guid: 07cc64a7d1c2c6a4b852f5938cde9898, type: 3}
       propertyPath: m_Color.g
-      value: 0.9098039
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4259889454049895750, guid: 07cc64a7d1c2c6a4b852f5938cde9898, type: 3}
       propertyPath: m_Color.r
-      value: 0.7607843
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4259889454079169661, guid: 07cc64a7d1c2c6a4b852f5938cde9898, type: 3}
       propertyPath: m_fontAsset
