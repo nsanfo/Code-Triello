@@ -6,6 +6,6 @@ public class LWeaponManager : MonoBehaviour
 {
     public string ObjectName;
     void Update() {
-        Debug.Log("1)" + ObjectName);
+        //Debug.Log("1)" + ObjectName);
     }
 }
