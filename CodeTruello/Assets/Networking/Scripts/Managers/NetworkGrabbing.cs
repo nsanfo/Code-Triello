@@ -16,9 +16,9 @@ public class NetworkGrabbing : MonoBehaviour
         
     }
     public void OnSelectEntered() {
-
+        Debug.Log("Grabbed");
     }
     public void OnSelectExit() {
-        
+        Debug.Log("Released");
     }
 }

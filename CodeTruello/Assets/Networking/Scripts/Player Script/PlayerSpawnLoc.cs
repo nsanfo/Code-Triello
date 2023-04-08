@@ -9,17 +9,21 @@ public class PlayerSpawnLoc : MonoBehaviour
     void Start()
     {
         photonView = GetComponent<PhotonView>();
-        if(photonView.ViewID == 1001) {
+        if(PlayerCount.NumberOfPlayers == 1) {
             // the player is local
             //this.gameObject.transform.position = new Vector3(0, 0, -123);
             SetLocAndRotRecursively(new Vector3(0, 0, -123), Quaternion.identity);
             Debug.Log("I am a local player");
-        } else if(photonView.ViewID == 2001) {
+            Debug.Log(PlayerCount.NumberOfPlayers);
+
+        } else if(PlayerCount.NumberOfPlayers != 2) {
             // the player is remote
             //this.gameObject.transform.position = new Vector3(-11, 0, 16);
             Debug.Log("I am a remote player");
             // this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
             SetLocAndRotRecursively(new Vector3(-11, 0, 16), Quaternion.Euler(new Vector3(0, 180, 0)));
+            Debug.Log(PlayerCount.NumberOfPlayers);
+
         }
     }
     // Update is called once per frame

@@ -12,16 +12,18 @@ public class WeaponMultiplayerSpawn : MonoBehaviour
     {
         photonView = GetComponent<PhotonView>();
         if(SceneManager.GetActiveScene().name != "Lobby"){ 
-            if(photonView.IsMine) {
+            if(PlayerCount.NumberOfPlayers == 1) {
                 // the player is local
                 this.gameObject.transform.position = new Vector3(0, 2, -120);
                 Debug.Log("I am a local weapon player");
+                Debug.Log(PlayerCount.NumberOfPlayers);
 
-            } else {
+            } else if(PlayerCount.NumberOfPlayers != 1) {
                 // the player is remote
 
                 this.gameObject.transform.position = new Vector3(-11, 2, 13);
                 Debug.Log("I am a remote weapon player");
+                Debug.Log(PlayerCount.NumberOfPlayers);
             }
         }
     }

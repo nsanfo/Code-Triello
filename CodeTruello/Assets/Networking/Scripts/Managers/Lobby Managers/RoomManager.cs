@@ -70,6 +70,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     //This will be called when a local player joins the room
     public override void OnJoinedRoom() {
         Debug.Log("The Local player " + PhotonNetwork.NickName + " joined to " + PhotonNetwork.CurrentRoom.Name + " Player count: " + PhotonNetwork.CurrentRoom.PlayerCount);
+        PlayerCount.NumberOfPlayers = 1;
 
         if(PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey(MultiplayerVRConstants.MAP_TYPE_KEY)) {
             object mapType;
@@ -95,6 +96,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     //This will be called when someone outside of local has joined the room
     public override void OnPlayerEnteredRoom(Player newPlayer) {
         Debug.Log("Player count: " + PhotonNetwork.CurrentRoom.PlayerCount);
+        PlayerCount.NumberOfPlayers = 2;
     }
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList){
