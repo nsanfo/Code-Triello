@@ -989,60 +989,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   XRRig: {fileID: 782922207}
-  LeftRotateController:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Left Rotate Controller
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: e2576ff3-44e3-47d2-a90b-f5f647eca070
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  RightRotateController:
+  LeftTeleportController: {fileID: 106789412}
+  LeftControllerParent: {fileID: 266653451}
+  RightTeleportController: {fileID: 1567617130}
+  RightControllerParent: {fileID: 1416140215}
+  MoveController:
     m_UseReference: 1
     m_Action:
-      m_Name: Right Rotate Controller
+      m_Name: Move Controller
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 6e439af2-ecde-44b3-beb8-5ffeee5eff86
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  RightMoveController:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Right Move Controller
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 5ee3cc3d-8c78-4b46-831f-f46757be0daa
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  LeftMoveController:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Left Move Controller
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 48fb87a8-c1ba-4fe3-8400-4ac3901bf869
+      m_Id: b7ceab7e-78c2-4e03-85b4-acd656c128d2
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  EnableLeftTele: 0
-  LeftTeleportController: {fileID: 106789412}
-  LeftControllerParent: {fileID: 266653451}
-  EnableRightTele: 1
-  RightTeleportController: {fileID: 1567617130}
-  RightControllerParent: {fileID: 1416140215}
+  RotateController:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Rotate Controller
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: a24098d4-7263-4bc9-9b75-e14db1cb5c5f
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &299364838
 GameObject:
   m_ObjectHideFlags: 0
@@ -2069,7 +2043,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 1010738217276881514, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_Reference: {fileID: 0}
   m_RightHandTurnAction:
     m_UseReference: 1
     m_Action:
@@ -2123,7 +2097,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    m_Reference: {fileID: 0}
 --- !u!114 &782922216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2194,7 +2168,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810450317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.382, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4691,60 +4665,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   XRRig: {fileID: 782922207}
-  LeftRotateController:
+  LeftTeleportController: {fileID: 106789412}
+  LeftControllerParent: {fileID: 266653451}
+  RightTeleportController: {fileID: 1567617130}
+  RightControllerParent: {fileID: 1416140215}
+  MoveController:
     m_UseReference: 1
     m_Action:
-      m_Name: Left Rotate Controller
+      m_Name: Move Controller
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 826d153a-4577-4b45-801c-1fccc72325f4
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 1010738217276881514, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  RightRotateController:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Right Rotate Controller
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 784dfe81-c78b-4984-a44f-332dba01b55e
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  RightMoveController:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Right Move Controller
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 692e70a8-0d9e-4ec8-8bdf-f397d6c72184
+      m_Id: 847e5a12-026f-4d28-bfcc-48f14db83ca5
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  LeftMoveController:
-    m_UseReference: 0
+  RotateController:
+    m_UseReference: 1
     m_Action:
-      m_Name: Left Move Controller
+      m_Name: Rotate Controller
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 6eb98998-d77d-40d0-b611-4c46fcb2a298
+      m_Id: 85f8876f-06b7-4516-a626-13ba80cac274
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
-  EnableLeftTele: 1
-  LeftTeleportController: {fileID: 106789412}
-  LeftControllerParent: {fileID: 266653451}
-  EnableRightTele: 0
-  RightTeleportController: {fileID: 1567617130}
-  RightControllerParent: {fileID: 1416140215}
+    m_Reference: {fileID: 1010738217276881514, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &1690764532 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6735939894268683078, guid: f4fa36b36f3c8e0499cc6ca9a59fffbd, type: 3}
