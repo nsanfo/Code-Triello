@@ -30,7 +30,7 @@ public class AvatarInputConverter : MonoBehaviour
         //MainAvatarTransform = the avatar prefab
         //XRHead = is the main camera
         MainAvatarTransform.position = Vector3.Lerp(MainAvatarTransform.position, XRHead.position + headPositionOffset, 0.5f);
-        AvatarHead.rotation = Quaternion.Lerp(AvatarHead.rotation, XRHead.rotation, 0.5f);
+        AvatarHead.rotation = Quaternion.Lerp(AvatarHead.rotation, Quaternion.Euler(new Vector3(XRHead.rotation.eulerAngles.x, XRHead.rotation.eulerAngles.y+180f, XRHead.rotation.eulerAngles.z)) , 0.5f);
         AvatarBody.rotation = Quaternion.Lerp(AvatarBody.rotation, Quaternion.Euler(new Vector3(0, AvatarHead.rotation.eulerAngles.y, 0)), 0.05f);
 
         //Hands synch
