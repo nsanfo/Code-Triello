@@ -2,22 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class openMenu : MonoBehaviour
 {
     public GameObject menuCanvas;
     public Button resumeButton;
+    public Button backToMenuButton;
     public Button exitButton;
 
     void Start()
     {
         menuCanvas.SetActive(false);
         resumeButton.onClick.AddListener(resumeGame);
-        exitButton.onClick.AddListener(closeGame);
+        backToMenuButton.onClick.AddListener(backToMenu);
+        exitButton.onClick.AddListener(exitGame);
     }
 
     void Update()
     {
+        //if the user presses the A Button, then open or close the menu
         if (Input.GetButtonDown("AButton"))
         {
             menuCanvas.SetActive(!menuCanvas.activeSelf);
@@ -26,12 +31,24 @@ public class openMenu : MonoBehaviour
 
     void resumeGame()
     {
+        //close the menu
         Debug.Log("Resume game clicked");
-    }
-
-    void closeGame()
-    {
-        Debug.Log("Close game clicked");
         menuCanvas.SetActive(false);
     }
+
+    //return to lobby 
+    void backToMenu()
+    {
+        Debug.Log("Return to Menu clicked");
+        //need to add disconnection code
+        //PhotonNetwork.LeaveRoom();
+        SceneManager.LoadScene(0);
+
+    }
+
+    void exitGame(){
+        Debug.Log("Exit game clicked.");
+        //exit game completely
+    }
+
 }
