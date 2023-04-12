@@ -940,6 +940,10 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5847157359761724542, guid: 4e25b1ca2554ea049bb26eeb230b72c1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 44ba768a0e7433549973c669860d5ac0, type: 2}
     - target: {fileID: 7090101511763101413, guid: 4e25b1ca2554ea049bb26eeb230b72c1, type: 3}
       propertyPath: m_Name
       value: Mushroom
@@ -1000,5 +1004,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8747650407002941232, guid: 4e25b1ca2554ea049bb26eeb230b72c1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 44ba768a0e7433549973c669860d5ac0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e25b1ca2554ea049bb26eeb230b72c1, type: 3}
