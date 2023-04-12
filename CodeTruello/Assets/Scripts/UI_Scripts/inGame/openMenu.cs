@@ -40,15 +40,17 @@ public class openMenu : MonoBehaviour
     void backToMenu()
     {
         Debug.Log("Return to Menu clicked");
-        //need to add disconnection code
-        //PhotonNetwork.LeaveRoom();
-        SceneManager.LoadScene(0);
-
+        // networkManager.Instance.LeaveRoomAndLoadHomeScreen();
     }
 
     void exitGame(){
         Debug.Log("Exit game clicked.");
-        //exit game completely
+
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+
+        #endif
+        Application.Quit();
     }
 
 }
