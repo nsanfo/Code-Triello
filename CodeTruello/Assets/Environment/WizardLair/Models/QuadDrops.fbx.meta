@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: fb71574282b386a4f84059163c03bc91
+guid: 1a0bfbfcffc6896499bef332581d54ad
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MushroomMat
-    second: {fileID: 2100000, guid: 44ba768a0e7433549973c669860d5ac0, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
