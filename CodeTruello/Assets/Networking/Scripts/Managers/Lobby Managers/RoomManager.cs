@@ -18,7 +18,11 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.AutomaticallySyncScene = true;
 
-        if (PhotonNetwork.IsConnectedAndReady){
+        if (!PhotonNetwork.IsConnectedAndReady){
+            PhotonNetwork.ConnectUsingSettings();
+        }
+        else
+        {
             PhotonNetwork.JoinLobby();
         }
     }
@@ -63,6 +67,12 @@ public class RoomManager : MonoBehaviourPunCallbacks
         Debug.Log(message);
         CreateAndJoinRoom();
     }
+
+    public override void OnConnectedToMaster(){
+        Debug.Log("Connected to servers again.");
+        PhotonNetwork.JoinLobby();
+    }
+
     // this will be created when a room is created
     public override void OnCreatedRoom() {
         Debug.Log("A room is created with the name: " + PhotonNetwork.CurrentRoom.Name);
@@ -70,7 +80,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     //This will be called when a local player joins the room
     public override void OnJoinedRoom() {
         Debug.Log("The Local player " + PhotonNetwork.NickName + " joined to " + PhotonNetwork.CurrentRoom.Name + " Player count: " + PhotonNetwork.CurrentRoom.PlayerCount);
-
+        PlayerCount.NumberOfPlayers = 1;
 
         if(PhotonNetwork.CurrentRoom.CustomProperties.ContainsKey(MultiplayerVRConstants.MAP_TYPE_KEY)) {
             object mapType;
@@ -96,6 +106,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     //This will be called when someone outside of local has joined the room
     public override void OnPlayerEnteredRoom(Player newPlayer) {
         Debug.Log("Player count: " + PhotonNetwork.CurrentRoom.PlayerCount);
+        PlayerCount.NumberOfPlayers = 2;
     }
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList){
@@ -118,7 +129,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
             }
             else if (room.Name.Contains(MultiplayerVRConstants.MAP_TYPE_VALUE_CASTLE)){
                 Debug.Log("Room is a Castle Map. Player count is: " + room.PlayerCount);
-            OccupancyRateText_ForCastle.text = "Players: " + room.PlayerCount + " / " + 2;
+                OccupancyRateText_ForCastle.text = "Players: " + room.PlayerCount + " / " + 2;
             }
         }
     }
@@ -135,7 +146,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     private void CreateAndJoinRoom() {
         string randomRoomName = "Room_" + mapType + Random.Range(0, 10000);
         RoomOptions roomOptions = new RoomOptions();
-        roomOptions.MaxPlayers = 20;
+        roomOptions.MaxPlayers = 2;
 
         string[] roomPropsInLobby = {MultiplayerVRConstants.MAP_TYPE_KEY};
         ExitGames.Client.Photon.Hashtable customRoomProperties = new ExitGames.Client.Photon.Hashtable() { {MultiplayerVRConstants.MAP_TYPE_KEY, mapType} };
