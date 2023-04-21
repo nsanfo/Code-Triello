@@ -1072,7 +1072,18 @@
                 },
                 {
                     "name": "",
-                    "id": "de466e6e-12bf-46a1-b0fd-ffbc343f3399",
+                    "id": "d6c08c3d-3d41-4695-994d-1ac9016a5a9e",
+                    "path": "<XRController>{RightHand}/Primary2DAxis",
+                    "interactions": "Sector(directions=12,sweepBehavior=1),Sector(directions=2,sweepBehavior=2)",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "79d5810b-11aa-49d7-ad58-d080f8253985",
                     "path": "<XRController>{RightHand}/gripPressed",
                     "interactions": "",
                     "processors": "",
@@ -1083,12 +1094,12 @@
                 },
                 {
                     "name": "",
-                    "id": "d6c08c3d-3d41-4695-994d-1ac9016a5a9e",
+                    "id": "abdfd3da-2b8c-44ff-9d6e-55bffa50d217",
                     "path": "<XRController>{RightHand}/Primary2DAxis",
-                    "interactions": "Sector(directions=12,sweepBehavior=1),Sector(directions=2,sweepBehavior=2)",
+                    "interactions": "Sector(directions=1)",
                     "processors": "",
                     "groups": "Generic XR Controller",
-                    "action": "Turn",
+                    "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
