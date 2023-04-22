@@ -20,7 +20,8 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
         if(photonView.IsMine) {
             // the player is local
             LocalXRRigGameObject.SetActive(true);
-            // this.gameObject.transform.position = new Vector3(0, 0, -123);
+            gameObject.tag = "Player1";
+            // LocalXRRigGameObject.GetComponent<PlayerState>().playerTag = "Player1";
             SetLayerRecursively(AvatarHeadGameObject, 6);
             SetLayerRecursively(AvatarBodyGameObject, 7);
 
@@ -34,6 +35,8 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
         } else {
             // the player is remote
             LocalXRRigGameObject.SetActive(false);
+            gameObject.tag = "Player2";
+            // LocalXRRigGameObject.GetComponent<PlayerState>().playerTag = "Player2";
             // this.gameObject.transform.position = new Vector3(-11, 0, 16);
             // Debug.Log("I am a remote player");
             // this.gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));

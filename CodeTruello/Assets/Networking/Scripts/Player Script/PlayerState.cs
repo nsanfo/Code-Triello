@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerState : MonoBehaviour
 {
+    AttributeSet PlayerAttribute;
+    GameObject weapon;
+    public string playerTag;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +18,7 @@ public class PlayerState : MonoBehaviour
     {
         
     }
-    public void Damage(float dmg) {
+    public void TakingDamage(float dmg) {
         
     }
 }
