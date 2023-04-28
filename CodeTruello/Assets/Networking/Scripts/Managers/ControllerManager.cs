@@ -46,7 +46,6 @@ public class ControllerManager : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         Debug.Log("I am collided");
         if(other.gameObject.layer ==  9 ) /*9 == Interactable*/ {
-            Debug.Log(this.gameObject.name);
             Tuple<InputActionProperty, InputActionProperty> Inputs;
 
             moveProvider.rightHandMoveAction = new InputActionProperty();

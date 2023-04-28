@@ -958,7 +958,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 1000
-  field of view: 100
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -1589,6 +1589,7 @@ GameObject:
   - component: {fileID: 3421584649382953339}
   - component: {fileID: 7204017026888893459}
   - component: {fileID: 5688005497532995059}
+  - component: {fileID: 890991626135273176}
   m_Layer: 0
   m_Name: Generic VR Player
   m_TagString: Untagged
@@ -1694,6 +1695,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd07b40c8c727134c98aad08af3eb31e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &890991626135273176
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6424737960401965867}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.35, y: 4.38, z: 2.12}
+  m_Center: {x: 0, y: 0.94, z: 0}
 --- !u!1 &6838129632750983304
 GameObject:
   m_ObjectHideFlags: 0

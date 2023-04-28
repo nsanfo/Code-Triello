@@ -21,6 +21,7 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
             // the player is local
             LocalXRRigGameObject.SetActive(true);
             gameObject.tag = "Player1";
+            SetTagRecursively(gameObject, "Player1");
             // LocalXRRigGameObject.GetComponent<PlayerState>().playerTag = "Player1";
             SetLayerRecursively(AvatarHeadGameObject, 6);
             SetLayerRecursively(AvatarBodyGameObject, 7);
@@ -36,6 +37,7 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
             // the player is remote
             LocalXRRigGameObject.SetActive(false);
             gameObject.tag = "Player2";
+            SetTagRecursively(gameObject, "Player2");
             // LocalXRRigGameObject.GetComponent<PlayerState>().playerTag = "Player2";
             // this.gameObject.transform.position = new Vector3(-11, 0, 16);
             // Debug.Log("I am a remote player");
@@ -50,7 +52,13 @@ public class PlayerNetworkSetup : MonoBehaviourPunCallbacks
     {
         
     }
-
+    void SetTagRecursively(GameObject go, string tagName) {
+        if (go == null) return;
+        foreach (Transform trans in go.GetComponentsInChildren<Transform>(true))
+        {
+            trans.gameObject.tag = tagName;
+        }
+    }
     void SetLayerRecursively(GameObject go, int layerNumber)
     {
         if (go == null) return;

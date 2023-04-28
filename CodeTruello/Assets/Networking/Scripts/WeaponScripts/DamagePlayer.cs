@@ -4,19 +4,40 @@ using UnityEngine;
 
 public class DamagePlayer : MonoBehaviour
 {
-    WeaponState state; 
+    // [SerializeField]
+    // WeaponState WS;
+    [SerializeField]
+    GameObject Player;
+    PlayerState PS_Player;
+    GameObject Enemy;
+    PlayerState PS_Enemy;
     private void Start() {
-        state = this.transform.parent.gameObject.GetComponent<WeaponState>();
-    }   
+    }  
+    private void Update() {
+        // if(WS != null) {
+        //     Player = WS.weaponOwner.gameObject;
+        // }
+    } 
     private void OnTriggerEnter(Collider other) {
-        string EnemyTag = "";
-        Debug.Log("ok");
-        if(other.CompareTag("Player")) {
-            EnemyTag = other.transform.parent.gameObject.GetComponent<PlayerState>().playerTag;
-            if(EnemyTag != state.weaponOwner.GetComponent<PlayerState>().playerTag) {
-                Debug.Log("I am Dealing damage");
+        string EnemyTag;
+        //AttributeSet set = PS_Player.PlayerAttribute
+        if(other != null) {
+            EnemyTag = other.transform.gameObject.tag;
+            if(EnemyTag != Player.tag) {
+                if(EnemyTag == "Player1" || EnemyTag == "Player2") {
+                    Enemy = other.transform.gameObject;
+                    PS_Enemy = Enemy.GetComponent<PlayerState>();
+                    Debug.Log("1) " + Player.tag);
+                    Debug.Log("2) " + EnemyTag);
+                    if(PS_Enemy != null) {
+                        PS_Enemy.TakingDamage(50);
+                    }
+                    //PS_Enemy = Enemy.transform.parent.gameObject.GetComponent<PlayerState>();
+                    Debug.Log("I am Dealing damage");
+
+                }
             }
         }
-        
     }
+
 }
