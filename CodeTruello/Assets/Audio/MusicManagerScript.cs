@@ -28,8 +28,7 @@ public class MusicManagerScript : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space))
-            skipSong();
+
     }
 
     // Music Helpers
@@ -84,15 +83,6 @@ public class MusicManagerScript : MonoBehaviour
     private System.Collections.IEnumerator WaitForSongEnd(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-        playMusic();
-    }
-
-    //Testing Functions
-        //I don't wanna wait for each entire song to finish, so i made this..
-
-    void skipSong()
-    {
-        StopCoroutine("WaitForSongEnd");
         playMusic();
     }
     

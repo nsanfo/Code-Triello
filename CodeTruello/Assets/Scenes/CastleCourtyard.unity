@@ -1183,6 +1183,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 715515081}
     m_Modifications:
+    - target: {fileID: 7742123166888097352, guid: acce523e41c8f7b4cbab597faf193451, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d0f5d4f564d3f640b714016338029b9, type: 2}
+    - target: {fileID: 7742123166888097352, guid: acce523e41c8f7b4cbab597faf193451, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f1d9aaeaac453134fa2dbbe4dacabfa5, type: 2}
+    - target: {fileID: 7742123166888097352, guid: acce523e41c8f7b4cbab597faf193451, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: e220d1a1831f9db4384b13ed04588b88, type: 2}
     - target: {fileID: 8102380831072343965, guid: acce523e41c8f7b4cbab597faf193451, type: 3}
       propertyPath: m_Name
       value: Sword
