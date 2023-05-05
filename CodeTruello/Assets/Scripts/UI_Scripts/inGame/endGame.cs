@@ -8,8 +8,10 @@ public class endGame : MonoBehaviour
     private bool hasDuplicates = false;
     private int prefabCount = 0;
     private Dictionary<int, GameObject> instances = new Dictionary<int, GameObject>();
-
+    
     private void Update()
+
+    
     {
         // Get all instances of the prefab in the scene
         GameObject[] instancesArray = GameObject.FindGameObjectsWithTag(prefabName);
@@ -19,11 +21,11 @@ public class endGame : MonoBehaviour
         Debug.Log("num of player prefabs in scene: " + prefabCount);
 
         // Check if there are duplicates
-        for (int i = 0; i < instancesArray.Length; i++)
+        for (int i = 1; i < instancesArray.Length; i++)
         {
             int instanceID = instancesArray[i].GetInstanceID();
 
-            if (instances.ContainsKey(instanceID))
+            if (instances.ContainsKey(instanceID) && prefabCount>1)
             {
                 hasDuplicates = true;
                 break;
@@ -34,15 +36,56 @@ public class endGame : MonoBehaviour
             }
         }
 
-        // If the prefab count has decreased from 2 after starting a game, call a function on the prefab
+        Debug.Log("Duplicates?: " + hasDuplicates);
+
         if (hasDuplicates && prefabCount < 2)
         {
-            // Call the function on the prefab
-            foreach (var instance in instances.Values) {
-                // instance.GetComponent<endVisuals>().EndGameFunction();
+            GameObject[] instancesArray2 = GameObject.FindGameObjectsWithTag(prefabName);
+
+            // Find a specific instance by name
+            foreach (var instance2 in instancesArray2)
+            {
+                if (instance2 != null)
+                {
+                    endVisuals endVisuals = instance2.transform.root.GetComponentInChildren<endVisuals>();
+                    if (endVisuals != null)
+                    {
+                        Debug.Log("End Game!");
+                        endVisuals.EndGameFunction();
+                        break;
+                    }
+                    else
+                    {
+                        Debug.Log("EndVisuals component not found!");
+                    }
+                }
             }
+        
+            // if (instancesArray2.Length == 0) {
+            //     Debug.Log("No instances found with tag " + prefabName);
+            // } else {
+            //     // Find a specific instance by name
+            //     foreach (var instance2 in instancesArray2)
+            //     {
+            //         if (instance2 != null && instance2.GetComponent<endVisuals>() != null)
+            //         {
+            //             instance2.GetComponent<endVisuals>().EndGameFunction();
+            //             Debug.Log("End Game!");
+            //             break;
+            //         }
+            //         else if (instance2.GetComponent<endVisuals>() == null){
+            //             Debug.Log("NULLLLLLLLL");
+            //         }
+            //     }
+            // }
+            // // // Call the function on the prefab
+            // foreach (var instance in instances.Values) {
+            //     instance.GetComponent<endVisuals>().EndGameFunction();
+            //     Debug.Log("End Game!");
+            //     break;
+            // }
             // Reset the bool and dictionary
-            hasDuplicates = false;
+            // hasDuplicates = false;
             instances.Clear();
         }
     }

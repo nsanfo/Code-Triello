@@ -2,27 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 public class endVisuals : MonoBehaviour
 {
+    private healthBar healthbarScript;
     public GameObject endCanvas;
     public GameObject healthBar;
-    // Start is called before the first frame update
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        healthbarScript = healthBar.GetComponent<healthBar>();
     }
 
     public void EndGameFunction()
     {
         endCanvas.SetActive(true);
-        healthBar.SetActive(false);
+        // healthbarScript.currentHealth = healthbarScript.maxHealth;
+        Debug.Log("Healthbar needs to be set to full health!");
     }
 }

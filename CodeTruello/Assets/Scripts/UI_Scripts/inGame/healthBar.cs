@@ -6,8 +6,18 @@ using UnityEngine.UI;
 public class healthBar : MonoBehaviour
 {
     [SerializeField] private Image healthbarFG;
-    // Start is called before the first frame update
-    public void UpdateHealthBar(float maxHealth, float currentHealth){
+    public float maxHealth;
+    public float currentHealth;
+
+    // Call UpdateHealthBar every frame
+    private void Update()
+    {
+        UpdateHealthBar(maxHealth, currentHealth);
+    }
+
+    // Update the health bar fill amount based on current and max health
+    public void UpdateHealthBar(float maxHealth, float currentHealth)
+    {
         healthbarFG.fillAmount = currentHealth / maxHealth;
     }
 }
