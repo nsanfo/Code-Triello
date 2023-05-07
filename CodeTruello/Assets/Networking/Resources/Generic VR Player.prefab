@@ -1682,6 +1682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4074f06be6373c6478b66de9dda5584e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerAttribute: {fileID: 5688005497532995059}
   playerTag: Player1
 --- !u!114 &5688005497532995059
 MonoBehaviour:
