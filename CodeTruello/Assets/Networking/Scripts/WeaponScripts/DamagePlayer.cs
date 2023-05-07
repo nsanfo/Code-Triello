@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,7 +30,7 @@ public class DamagePlayer : MonoBehaviour
                     Debug.Log("1) " + Player.tag);
                     Debug.Log("2) " + EnemyTag);
                     if(PS_Enemy != null) {
-                        PS_Enemy.TakingDamage(50);
+                        PS_Enemy.TakingDamage(1500);
                     }
                     //PS_Enemy = Enemy.transform.parent.gameObject.GetComponent<PlayerState>();
                     Debug.Log("I am Dealing damage");
