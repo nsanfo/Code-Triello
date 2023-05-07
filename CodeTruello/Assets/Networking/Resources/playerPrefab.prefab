@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5271859405258268469}
   - component: {fileID: 8932487439629903649}
   - component: {fileID: 9056149596920349092}
+  - component: {fileID: 3387223298550089470}
   m_Layer: 5
   m_Name: ReplayButton
   m_TagString: Untagged
@@ -122,6 +123,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3387223298550089470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210483381616292368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601091ee13e20f94e9cad790899038ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &294046656925849344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,7 +1086,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7528429360045223181
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1870,6 +1883,7 @@ GameObject:
   - component: {fileID: 4288924275981565807}
   - component: {fileID: 6107333638597081277}
   - component: {fileID: 8305405282284392023}
+  - component: {fileID: 7190658686796108603}
   m_Layer: 0
   m_Name: PlayerUIManager
   m_TagString: Untagged
@@ -1917,8 +1931,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c1d36fea15f094bafc98d8a6188ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLeftEnd: 0
   endCanvas: {fileID: 1926202604789960488}
-  healthBar: {fileID: 4371966102840575110}
+  healthBar: {fileID: 4912952859476564989}
 --- !u!114 &6107333638597081277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1945,6 +1960,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gotoMenuButton: {fileID: 5853400643460867399}
+--- !u!114 &7190658686796108603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3514678928196645409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 070318d7606849e40a62e950f5e9c04a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabName: playerPrefab
+  winCanvas: {fileID: 1926202604789960488}
+  loseCanvas: {fileID: 6246135857364463470}
 --- !u!1 &3594937775558749613
 GameObject:
   m_ObjectHideFlags: 0
@@ -2450,8 +2480,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa268cced79b90f478b19fdbdebcc127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthbarFG: {fileID: 7345863050204282517}
   maxHealth: 100
+  defaultCurrentHealth: 100
+  healthbarFG: {fileID: 7345863050204282517}
   currentHealth: 100
 --- !u!1 &5596835457240772164
 GameObject:
@@ -3112,7 +3143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2670561277879904694
 RectTransform:
   m_ObjectHideFlags: 0

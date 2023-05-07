@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class endVisuals : MonoBehaviour
 {
+    public bool playerLeftEnd;
     private healthBar healthbarScript;
     public GameObject endCanvas;
     public GameObject healthBar;
 
     void Start()
     {
+        playerLeftEnd = false;
         healthbarScript = healthBar.GetComponent<healthBar>();
     }
 
     public void EndGameFunction()
     {
+        playerLeftEnd = true;
         endCanvas.SetActive(true);
-        // healthbarScript.currentHealth = healthbarScript.maxHealth;
-        Debug.Log("Healthbar needs to be set to full health!");
+        healthbarScript.currentHealth = healthbarScript.maxHealth;
+        Debug.Log("Current Health (should be reset at 100): "+ healthbarScript.currentHealth);
     }
 }

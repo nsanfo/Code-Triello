@@ -85,7 +85,7 @@ public class endGame : MonoBehaviour
             //     break;
             // }
             // Reset the bool and dictionary
-            // hasDuplicates = false;
+            hasDuplicates = false;
             instances.Clear();
         }
     }
