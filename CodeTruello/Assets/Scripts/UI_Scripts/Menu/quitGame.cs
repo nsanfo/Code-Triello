@@ -10,6 +10,12 @@ public class quitGame : MonoBehaviour
 
     public void exitGame()
     {
+        Debug.Log("Exit game clicked.");
+
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+
+        #endif
         Application.Quit();
     }
     // Start is called before the first frame update
