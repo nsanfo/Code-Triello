@@ -12,7 +12,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     GameObject GenericVRPlayerPrefab;
     public Vector3 SpawnPoint;
-    public Vector3[] spawnsloc;
+    public Transform[] spawnsloc;
     public string[] playertags;
 
     
@@ -27,14 +27,12 @@ public class SpawnManager : MonoBehaviour
         Debug.Log("CurrentPlayerCount" +  PhotonNetwork.CurrentRoom.PlayerCount);
         if(PhotonNetwork.IsConnectedAndReady) {
             int playerCount = PhotonNetwork.CurrentRoom.PlayerCount;
-            // if(GenericVRPlayerPrefab.GetComponent<PhotonView>().IsMine) {
-            //     GenericVRPlayerPrefab.GetComponent<PlayerState>().playerTag = playertags[playerCount-1];
-            // } else {
-            //     GenericVRPlayerPrefab.GetComponent<PlayerState>().playerTag = playertags[playerCount-1];
-            // }
+            float spawnX = spawnsloc[playerCount-1].position.x;
+            float spawnY = spawnsloc[playerCount-1].position.y;
+            float spawnZ = spawnsloc[playerCount-1].position.z;
 
 
-            PhotonNetwork.Instantiate(GenericVRPlayerPrefab.name, spawnsloc[playerCount-1], Quaternion.identity);
+            PhotonNetwork.Instantiate(GenericVRPlayerPrefab.name, new Vector3(spawnX, spawnY, spawnZ), Quaternion.identity);
 
         }
     }

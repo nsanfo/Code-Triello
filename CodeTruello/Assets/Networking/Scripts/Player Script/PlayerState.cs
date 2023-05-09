@@ -34,7 +34,7 @@ public class PlayerState : MonoBehaviour
             Destroy(this, 2);
         }
         else {
-            float currentHealth = PlayerAttribute.GetCurrentHealth();
+            float currentHealth = PlayerAttribute.GetCurrentHealth() - totalDamage;
             PlayerAttribute.SetCurrentHealth(currentHealth);
         }
         Debug.Log("armor: " + PlayerAttribute.GetArmor());

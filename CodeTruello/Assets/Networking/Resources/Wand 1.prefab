@@ -287,8 +287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14f6dd1f504d8ed488f777085ed37ae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  bullet: {fileID: 2477917038257050180, guid: 2fed38ca12813204f83542c0c709961f, type: 3}
+  speed: 50
+  bullet: {fileID: 6558198360888909956, guid: 6b2dac807cad48147ba0fa41dec25a2a, type: 3}
   barrel: {fileID: 5700659814217798503}
 --- !u!114 &1969805918544854044
 MonoBehaviour:
@@ -333,11 +333,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3319018743221078380}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b19237c9f8e16d040aebfb119780f6ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnsloc: []
+  spawnLocs: []
 --- !u!114 &1095405293848003625
 MonoBehaviour:
   m_ObjectHideFlags: 0
