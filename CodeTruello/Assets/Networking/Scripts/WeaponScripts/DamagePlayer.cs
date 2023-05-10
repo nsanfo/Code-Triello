@@ -11,6 +11,8 @@ public class DamagePlayer : MonoBehaviour
     PlayerState PS_Player;
     GameObject Enemy;
     PlayerState PS_Enemy;
+    [SerializeField]
+    float damage;
     private void Start() {
     }  
     private void Update() {
@@ -30,7 +32,7 @@ public class DamagePlayer : MonoBehaviour
                     Debug.Log("1) " + Player.tag);
                     Debug.Log("2) " + EnemyTag);
                     if(PS_Enemy != null) {
-                        PS_Enemy.TakingDamage(1500);
+                        PS_Enemy.TakingDamage(damage);
                     }
                     //PS_Enemy = Enemy.transform.parent.gameObject.GetComponent<PlayerState>();
                     Debug.Log("I am Dealing damage");
