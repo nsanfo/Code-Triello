@@ -16,7 +16,7 @@ public class wizardCollider : MonoBehaviour
         // Networking and moving to the wizard map!
         // uncomment once map is added!
         
-        //RoomManager.GetComponent<RoomManager>().OnEnterButtonClicked_Wizard();
+        RoomManager.GetComponent<RoomManager>().OnEnterButtonClicked_Wizard();
         }
     }
 }
