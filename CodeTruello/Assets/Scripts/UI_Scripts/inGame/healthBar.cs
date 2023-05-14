@@ -8,6 +8,8 @@ public class healthBar : MonoBehaviour
     [SerializeField] public float maxHealth = 100f;
     [SerializeField] private float defaultCurrentHealth = 100f;
     [SerializeField] private Image healthbarFG;
+    public AttributeSet playerAttributeSet;
+
     public float currentHealth;
 
     private void Start()
@@ -21,9 +23,15 @@ public class healthBar : MonoBehaviour
         UpdateHealthBar(maxHealth, currentHealth);
     }
 
-    // Update the health bar fill amount based on current and max health
+    public void UpdateHealthBar(float maxHealth)
+    {
+        float currentHealth = playerAttributeSet.GetCurrentHealth();
+        UpdateHealthBar(maxHealth, currentHealth);
+    }
+
     public void UpdateHealthBar(float maxHealth, float currentHealth)
     {
         healthbarFG.fillAmount = currentHealth / maxHealth;
     }
+
 }

@@ -6,19 +6,16 @@ using System.Linq;
 
 public class EndOptions : MonoBehaviour
 {
-    public string prefabName = "playerPrefab";
+    public string prefabName = "PlayerPrefab";
     public GameObject winCanvas;
     public GameObject loseCanvas;
     bool isPlayerLeftEnd;
-
-
-
 
     private Dictionary<healthBar, Canvas> playerCanvases = new Dictionary<healthBar, Canvas>();
 
     private void Start()
     {
-        // checking to see if a player has left for not, so that the canvases don't stay hidden!
+        // Checking to see if a player has left or not, so that the canvases don't stay hidden!
         endVisuals endVisualsScript = GetComponent<endVisuals>();
         isPlayerLeftEnd = endVisualsScript.playerLeftEnd;
 
@@ -77,13 +74,13 @@ public class EndOptions : MonoBehaviour
                     loseCanvas.SetActive(true);
                 }
                 healthbarScript.currentHealth = healthbarScript.maxHealth;
-                Debug.Log("health reset at:" + healthbarScript.currentHealth);
+                Debug.Log("Health reset at: " + healthbarScript.currentHealth);
                 break;
             }
         }
 
         // // If no player is dead, disable both canvases
-        // if (!isAnyPlayerDead && isPlayerLeftEnd ==false)
+        // if (!isAnyPlayerDead && isPlayerLeftEnd == false)
         // {
         //     winCanvas.SetActive(false);
         //     loseCanvas.SetActive(false);

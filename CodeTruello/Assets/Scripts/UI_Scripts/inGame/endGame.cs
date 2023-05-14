@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class endGame : MonoBehaviour
 {
-    public string prefabName = "playerPrefab";
+    public string[] prefabNames = { "Player1", "Player2" };
     private bool hasDuplicates = false;
     private int prefabCount = 0;
     private Dictionary<int, GameObject> instances = new Dictionary<int, GameObject>();
-    
-    private void Update()
 
-    
+    private void Update()
     {
-        // Get all instances of the prefab in the scene
-        GameObject[] instancesArray = GameObject.FindGameObjectsWithTag(prefabName);
+        // Get all instances of the prefabs in the scene
+        GameObject[] instancesArray = FindGameObjectsWithTags(prefabNames);
+
+        // Filter out instances that don't have names including "playerPrefab"
+        instancesArray = FilterInstancesByName(instancesArray, "playerPrefab");
 
         // Update the count of instances
         prefabCount = instancesArray.Length;
@@ -25,7 +26,7 @@ public class endGame : MonoBehaviour
         {
             int instanceID = instancesArray[i].GetInstanceID();
 
-            if (instances.ContainsKey(instanceID) && prefabCount>1)
+            if (instances.ContainsKey(instanceID) && prefabCount > 1)
             {
                 hasDuplicates = true;
                 break;
@@ -40,7 +41,10 @@ public class endGame : MonoBehaviour
 
         if (hasDuplicates && prefabCount < 2)
         {
-            GameObject[] instancesArray2 = GameObject.FindGameObjectsWithTag(prefabName);
+            GameObject[] instancesArray2 = FindGameObjectsWithTags(prefabNames);
+
+            // Filter out instances that don't have names including "playerPrefab"
+            instancesArray2 = FilterInstancesByName(instancesArray2, "playerPrefab");
 
             // Find a specific instance by name
             foreach (var instance2 in instancesArray2)
@@ -60,33 +64,42 @@ public class endGame : MonoBehaviour
                     }
                 }
             }
-        
-            // if (instancesArray2.Length == 0) {
-            //     Debug.Log("No instances found with tag " + prefabName);
-            // } else {
-            //     // Find a specific instance by name
-            //     foreach (var instance2 in instancesArray2)
-            //     {
-            //         if (instance2 != null && instance2.GetComponent<endVisuals>() != null)
-            //         {
-            //             instance2.GetComponent<endVisuals>().EndGameFunction();
-            //             Debug.Log("End Game!");
-            //             break;
-            //         }
-            //         else if (instance2.GetComponent<endVisuals>() == null){
-            //             Debug.Log("NULLLLLLLLL");
-            //         }
-            //     }
-            // }
-            // // // Call the function on the prefab
-            // foreach (var instance in instances.Values) {
-            //     instance.GetComponent<endVisuals>().EndGameFunction();
-            //     Debug.Log("End Game!");
-            //     break;
-            // }
+
             // Reset the bool and dictionary
             hasDuplicates = false;
             instances.Clear();
         }
+    }
+
+    private GameObject[] FindGameObjectsWithTags(string[] tags)
+    {
+        // Create a list to store the found GameObjects
+        List<GameObject> foundObjects = new List<GameObject>();
+
+        // Iterate over each tag name
+        foreach (string tag in tags)
+        {
+            // Find GameObjects with the current tag and add them to the list
+            GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag(tag);
+            foundObjects.AddRange(objectsWithTag);
+        }
+
+        // Convert the list to an array and return it
+        return foundObjects.ToArray();
+    }
+
+    private GameObject[] FilterInstancesByName(GameObject[] instancesArray, string nameFilter)
+    {
+        List<GameObject> filteredInstances = new List<GameObject>();
+
+        foreach (var instance in instancesArray)
+        {
+            if (instance.name.Contains(nameFilter))
+            {
+                filteredInstances.Add(instance);
+            }
+        }
+
+        return filteredInstances.ToArray();
     }
 }
