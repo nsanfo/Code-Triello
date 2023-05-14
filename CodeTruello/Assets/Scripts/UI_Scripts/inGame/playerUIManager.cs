@@ -11,7 +11,7 @@ public class playerUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gotoMenuButton.GetComponent<Button>().onClick.AddListener(networkManager.Instance.LeaveRoomAndLoadHomeScreen);
+        //gotoMenuButton.GetComponent<Button>().onClick.AddListener(networkManager.Instance.LeaveRoomAndLoadHomeScreen);
     }
 
     // Update is called once per frame

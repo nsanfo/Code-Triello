@@ -1665,7 +1665,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 1000
-  field of view: 100
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -2763,7 +2763,9 @@ GameObject:
   - component: {fileID: 3007419245746937267}
   - component: {fileID: 4674000870998527361}
   - component: {fileID: 3421584649382953339}
-  - component: {fileID: -5116946732766662393}
+  - component: {fileID: 7204017026888893459}
+  - component: {fileID: 5688005497532995059}
+  - component: {fileID: 890991626135273176}
   m_Layer: 0
   m_Name: Generic VR Player
   m_TagString: Untagged
@@ -2844,7 +2846,7 @@ MonoBehaviour:
   bodyTransform: {fileID: 5998699903406472322}
   leftHandTransform: {fileID: 2348433783661119773}
   rightHandTransform: {fileID: 2682999654411463869}
---- !u!114 &-5116946732766662393
+--- !u!114 &7204017026888893459
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2853,9 +2855,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 6424737960401965867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbb11d4120838de4ba6064027d873bfb, type: 3}
+  m_Script: {fileID: 11500000, guid: 4074f06be6373c6478b66de9dda5584e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerAttribute: {fileID: 5688005497532995059}
+  playerTag: Player1
+--- !u!114 &5688005497532995059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6424737960401965867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd07b40c8c727134c98aad08af3eb31e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &890991626135273176
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6424737960401965867}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.35, y: 4.38, z: 2.12}
+  m_Center: {x: 0, y: 0.94, z: 0}
 --- !u!1 &6838129632750983304
 GameObject:
   m_ObjectHideFlags: 0

@@ -106,7 +106,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     //This will be called when someone outside of local has joined the room
     public override void OnPlayerEnteredRoom(Player newPlayer) {
         Debug.Log("Player count: " + PhotonNetwork.CurrentRoom.PlayerCount);
-        PlayerCount.NumberOfPlayers = 2;
+
     }
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList){
