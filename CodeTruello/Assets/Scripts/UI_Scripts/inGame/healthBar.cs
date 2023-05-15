@@ -5,33 +5,18 @@ using UnityEngine.UI;
 
 public class healthBar : MonoBehaviour
 {
-    [SerializeField] public float maxHealth = 100f;
-    [SerializeField] private float defaultCurrentHealth = 100f;
     [SerializeField] private Image healthbarFG;
     public AttributeSet playerAttributeSet;
 
-    public float currentHealth;
-
-    private void Start()
-    {
-        currentHealth = defaultCurrentHealth;
-    }
-
-    // Call UpdateHealthBar every frame
     private void Update()
     {
-        UpdateHealthBar(maxHealth, currentHealth);
+        UpdateHealthBar();
     }
 
-    public void UpdateHealthBar(float maxHealth)
+    public void UpdateHealthBar()
     {
         float currentHealth = playerAttributeSet.GetCurrentHealth();
-        UpdateHealthBar(maxHealth, currentHealth);
-    }
-
-    public void UpdateHealthBar(float maxHealth, float currentHealth)
-    {
+        float maxHealth = playerAttributeSet.GetMaxHealth();
         healthbarFG.fillAmount = currentHealth / maxHealth;
     }
-
 }

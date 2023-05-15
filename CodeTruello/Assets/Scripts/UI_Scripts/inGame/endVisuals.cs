@@ -19,7 +19,10 @@ public class endVisuals : MonoBehaviour
     {
         playerLeftEnd = true;
         endCanvas.SetActive(true);
-        healthbarScript.currentHealth = healthbarScript.maxHealth;
-        Debug.Log("Current Health (should be reset at 100): "+ healthbarScript.currentHealth);
+        float maxHealth = healthbarScript.playerAttributeSet.GetMaxHealth();
+        float currentHealth = healthbarScript.playerAttributeSet.GetCurrentHealth();
+        currentHealth = maxHealth;
+
+        Debug.Log("Current Health (should be reset to full): " + currentHealth);
     }
 }

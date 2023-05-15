@@ -1907,7 +1907,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 070318d7606849e40a62e950f5e9c04a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabName: playerPrefab
   winCanvas: {fileID: 178647346801318327}
   loseCanvas: {fileID: 813982938776591546}
 --- !u!114 &3721051527884865715
@@ -2382,11 +2381,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa268cced79b90f478b19fdbdebcc127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  defaultCurrentHealth: 100
   healthbarFG: {fileID: 7345863050204282517}
   playerAttributeSet: {fileID: 5688005497532995059}
-  currentHealth: 100
 --- !u!1 &5596835457240772164
 GameObject:
   m_ObjectHideFlags: 0
