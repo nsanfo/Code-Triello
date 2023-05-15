@@ -27,7 +27,7 @@ public class DamagePlayer : MonoBehaviour
             EnemyTag = other.transform.gameObject.tag;
             if(EnemyTag != Player.tag) {
                 if(EnemyTag == "Player1" || EnemyTag == "Player2") {
-                    Enemy = other.transform.gameObject;
+                    Enemy = other.transform.root.gameObject;
                     PS_Enemy = Enemy.GetComponent<PlayerState>();
                     Debug.Log("1) " + Player.tag);
                     Debug.Log("2) " + EnemyTag);
