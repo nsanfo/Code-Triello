@@ -191,14 +191,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30653109}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 526, y: 1, z: 399}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 526, y: 1.5, z: 399}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 146489021}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &92725762
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +384,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2c5254a929dbea45a6cb7e3e1a3fca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnLocs: []
+  spawnLocs:
+  - {fileID: 950786466}
+  - {fileID: 1672640306}
   spawnPosition: {x: -3, y: 1, z: 3}
 --- !u!1001 &206582082
 PrefabInstance:
@@ -1803,7 +1805,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214214744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 463, y: 1, z: 399}
+  m_LocalPosition: {x: 463, y: 1.5, z: 399}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2037,8 +2039,8 @@ MonoBehaviour:
   GenericVRPlayerPrefab: {fileID: 6424737960401965867, guid: 94c3fabfb94040f42ab2bdbac989f7c1, type: 3}
   SpawnPoint: {x: 0, y: 0, z: 0}
   spawnsloc:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 30653110}
+  - {fileID: 1214214745}
   playertags:
   - Player1
   - Player2

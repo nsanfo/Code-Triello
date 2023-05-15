@@ -10,8 +10,8 @@ public class PlayerState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerAttribute.SetCurrentHealth(5000);
-        PlayerAttribute.SetMaxHealth(5000);
+        PlayerAttribute.SetCurrentHealth(2500);
+        PlayerAttribute.SetMaxHealth(2500);
         PlayerAttribute.SetDamage(120);
         PlayerAttribute.SetArmor(100);
     }
