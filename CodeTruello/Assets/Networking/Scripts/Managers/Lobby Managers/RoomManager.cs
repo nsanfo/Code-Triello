@@ -94,9 +94,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
                     PhotonNetwork.LoadLevel("WizardLair");
                 } else if ((string)mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_CASTLE) {
                     // load the Castle scene
-                    // Scene for map has to be added to the build settings
-                    Debug.Log("Once map is added, will join " + (string)mapType);
-                    //PhotonNetwork.LoadLevel("Castle");
+                    PhotonNetwork.LoadLevel("CastleCourtyard");
                 }
             }
         }

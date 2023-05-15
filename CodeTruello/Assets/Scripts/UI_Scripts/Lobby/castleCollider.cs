@@ -14,9 +14,8 @@ public class castleCollider : MonoBehaviour
         {
         Debug.Log("User has entered the " + colliderName);
         // Networking and moving to the castle map!
-        // uncomment once map is added!
 
-        // RoomManager.GetComponent<RoomManager>().OnEnterButtonClicked_Castle();
+        RoomManager.GetComponent<RoomManager>().OnEnterButtonClicked_Castle();
         }
     }
 }
