@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class Wand : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Wand : MonoBehaviour
     [SerializeField] Transform barrel;
     
    public void Fire() {
-        GameObject spawnedBullet = Instantiate(bullet, barrel.position, barrel.rotation);
+        GameObject spawnedBullet = PhotonNetwork.Instantiate("Star", barrel.position, barrel.rotation);
         //spawnedBullet.AddComponent<Rigidbody>();
         spawnedBullet.GetComponent<Rigidbody>().velocity = speed * barrel.up;
         Destroy(spawnedBullet,2);

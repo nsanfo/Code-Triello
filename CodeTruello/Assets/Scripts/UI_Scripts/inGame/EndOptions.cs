@@ -109,11 +109,11 @@ public class EndOptions : MonoBehaviour
     }
 
     // If no player is dead, disable both canvases
-    if (!isAnyPlayerDead && !isPlayerLeftEnd)
-    {
-        winCanvas.SetActive(false);
-        loseCanvas.SetActive(false);
-    }
+    // if (!isAnyPlayerDead && !isPlayerLeftEnd)
+    // {
+    //     winCanvas.SetActive(false);
+    //     loseCanvas.SetActive(false);
+    // }
 }
 
     // losing player = 0

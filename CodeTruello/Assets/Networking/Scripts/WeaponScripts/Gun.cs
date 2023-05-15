@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class Gun : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Gun : MonoBehaviour
     [SerializeField] Transform barrel;
     
     public void Fire() {
-        GameObject spawnedBullet = Instantiate(bullet, barrel.position, barrel.rotation);
+        GameObject spawnedBullet = PhotonNetwork.Instantiate("Bullet", barrel.position, barrel.rotation);
         //spawnedBullet.AddComponent<Rigidbody>();
         spawnedBullet.GetComponent<Rigidbody>().velocity = speed * barrel.up;
         Destroy(spawnedBullet,2);
