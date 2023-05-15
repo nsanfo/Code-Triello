@@ -1905,7 +1905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 070318d7606849e40a62e950f5e9c04a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabName: PlayerPrefab
+  prefabName: playerPrefab
   winCanvas: {fileID: 178647346801318327}
   loseCanvas: {fileID: 813982938776591546}
 --- !u!114 &3721051527884865715
@@ -2197,7 +2197,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -2.69}
+  m_AnchoredPosition: {x: 0, y: -2.642}
   m_SizeDelta: {x: 1200, y: 204}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &18966964915103444

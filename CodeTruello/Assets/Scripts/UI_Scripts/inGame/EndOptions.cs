@@ -6,7 +6,7 @@ using System.Linq;
 
 public class EndOptions : MonoBehaviour
 {
-    public string prefabName = "PlayerPrefab";
+    public string prefabName = "playerPrefab";
     public GameObject winCanvas;
     public GameObject loseCanvas;
     bool isPlayerLeftEnd;

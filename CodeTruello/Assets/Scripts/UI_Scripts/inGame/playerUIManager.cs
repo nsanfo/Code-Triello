@@ -11,7 +11,15 @@ public class playerUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // gotoMenuButton.GetComponent<Button>().onClick.AddListener(networkManager.Instance.LeaveRoomAndLoadHomeScreen);
+        Button button = gotoMenuButton.GetComponent<Button>();
+        if (button != null)
+        {
+            button.onClick.AddListener(() => networkManager.Instance.LeaveRoomAndLoadHomeScreen());
+        }
+        else
+        {
+            Debug.LogError("Button reference is null. Make sure the button is assigned.");
+        }
     }
 
     // Update is called once per frame
