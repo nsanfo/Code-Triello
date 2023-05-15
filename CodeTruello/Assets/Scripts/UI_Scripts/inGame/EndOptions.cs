@@ -90,15 +90,15 @@ public class EndOptions : MonoBehaviour
             int winningPlayerIndex = GetWinningPlayerIndex(healthbarScript);
             if (winningPlayerIndex == 0)
             {
-                // Winning player
+                // losing player
                 playerCanvasObj.gameObject.SetActive(true);
-                winCanvas.SetActive(true);
-                loseCanvas.SetActive(false);
+                winCanvas.SetActive(false);
+                loseCanvas.SetActive(true);
                 Debug.Log("Player 1 won.");
             }
             else
             {
-                // Losing player
+                // winning player
                 playerCanvasObj.gameObject.SetActive(false);
                 loseCanvas.SetActive(true);
                 winCanvas.SetActive(false);
@@ -116,7 +116,7 @@ public class EndOptions : MonoBehaviour
     }
 }
 
-    // Winning player = 0
+    // losing player = 0
     private int GetWinningPlayerIndex(healthBar playerHealthBar)
     {
         int playerIndex = 0;
